@@ -5,6 +5,6 @@ const product = require("../controllers/product/productController");
 
 //routes
 
-router.get("/fetch", product.fetchProducts);
+router.get("/", product.fetchProducts);
 
 module.exports = router;

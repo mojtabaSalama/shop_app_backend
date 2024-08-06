@@ -49,7 +49,7 @@ const cart = {
 
       return res.status(201).json("Item added to cart successfully");
     } catch (error) {
-    res.status(500).json("An internal error occurred , try later please");
+      res.status(500).json("An internal error occurred , try later please");
     }
   },
 
@@ -120,39 +120,7 @@ const cart = {
       console.log(error);
     }
   },
-  cart_item_by_id: async (req, res, next) => {
-    try {
-      const customerAuth = req.app.locals.customer;
-      if (!customerAuth || !customerAuth.id) {
-        return res.status(401).json("Unauthorized");
-      }
 
-      const id = req.params.id; 
-
-      if (!id) {
-        return res.status(400).json("Please enter the item ID");
-      }
-
-      const cart = await Cart.findOne({
-        where: { customerId: customerAuth.id },
-      });
-
-      if (!cart) {
-        return res.status(404).json("Cart not found");
-      }
-
-      const cart_item = await CartItem.findOne({
-        where: { id },
-      });
-
-      if (!cart_item) {
-        return res.status(404).json("Product not found in the cart");
-      }
-      return res.status(201).json({ cart_item });
-    } catch (error) {
-      next(error);
-    }
-  },
   remove_from_cart: async (req, res, next) => {
     try {
       const customerAuth = req.app.locals.customer;
