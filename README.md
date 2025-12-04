@@ -1,6 +1,6 @@
 # shop_backend
 
-Welcome to the `shop_backend` repository! This project is the backend for the `shopApp` application, providing APIs for user authentication, product management, order processing, and more. Below you'll find comprehensive details about the project, including setup instructions, API documentation, and contribution guidelines.
+A comprehensive e-commerce backend API built with Node.js, Express, MySQL2, and Sequelize. This application provides a complete backend solution for online shopping functionality with user authentication, product management, order processing, cart management, and secure data handling capabilities.
 
 ## Table of Contents
 
